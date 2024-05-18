@@ -21,7 +21,7 @@ WITH
       END AS is_active_last_year,
       LAG(quality_class, 1) OVER (
         PARTITION BY
-          actor_id
+          actor
         ORDER BY
           current_year
       ) AS quality_class_last_year,
