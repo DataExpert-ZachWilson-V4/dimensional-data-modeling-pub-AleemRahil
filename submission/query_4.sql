@@ -53,7 +53,7 @@ WITH
   )
 SELECT
   actor,
-  streak_identifier,
+  quality_class,
   MAX(is_active) = 1 AS is_active, -- Adding this condition as is_active is a Boolean but got converted to int in lagged
   MIN(current_year) AS start_year,
   MAX(current_year) AS end_year,
@@ -63,5 +63,4 @@ FROM
 GROUP BY
   actor,
   streak_identifier,
-  quality_class,
-  is_active
+  quality_class
